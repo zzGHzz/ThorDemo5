@@ -1,0 +1,16 @@
+{
+  "name": "thordemo5",
+  "version": "1.0.0",
+  "description": "Demo of launching customized VeChainThor blockchain network",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ziheng (Peter) Zhou",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^12.7.3",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.6.2"
+  }
+}
