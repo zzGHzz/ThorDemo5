@@ -63,18 +63,17 @@ const config: Config = {
     executor: _executor
 }
 
-let json = JSON.stringify(config);
-json = json.replace(/([1-9]\.?[0-9]*)e\+([1-9][0-9]*)/ig, (_, p1, p2) => {
-    if (p1 == '') { throw "Err: p1"; }
-    if (p2 == '') { throw "Err: p2"; }
-
-    p1 = p1.replace('.', '');
-    const n = parseInt(p2) - p1.length + 1;
-    const str = p1 + '0'.repeat(n);
-    return str;
-});
-
-fs.writeFileSync('./customChainConfig.json', json);
+// Write the JSON string to file
+fs.writeFileSync(
+    './customChainConfig.json',
+    // Correct scientific notations
+    JSON.stringify(config).replace(/([1-9]\.?[0-9]*)e\+([1-9][0-9]*)/ig, (_, p1, p2) => {
+        p1 = p1.replace('.', '');
+        const n = parseInt(p2) - p1.length + 1;
+        const str = p1 + '0'.repeat(n);
+        return str;
+    })
+);
 
 function strToHexStr(str: string, hexLen: number): string {
     let hexstr = Buffer.from(str).toString('hex');
