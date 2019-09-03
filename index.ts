@@ -1,12 +1,12 @@
-import { Account, Authority, Params, Approver, Executor, Config } from './config';
+import { Account, Authority, Params, Executor, Config } from './config';
 import * as fs from "fs";
 
 /**
  * Set masternode accounts
  */
-const masterAddress1 = '0xa82181014927bf5ef68ba06bea980a32c2eb587a';    // thor master-key -config-dir ~/Work/tmp/node1
-const masterAddress2 = '0x2685064b0c99b619c22079ef73083ba822f9a2c2';    // thor master-key -config-dir ~/Work/tmp/node2
-const masterAddress3 = '0x5f5ead1b7ed99eaab5eb82c417f15b710ff006bf';    // thor master-key -config-dir ~/Work/tmp/node3
+const masterAddress1 = '0x929710d206f0e1133f353553353de5bc80c8460b';    // thor master-key -config-dir ~/Work/tmp/node1
+const masterAddress2 = '0xaf05f933692569a710c2f6fa323a59e20068d418';    // thor master-key -config-dir ~/Work/tmp/node2
+const masterAddress3 = '0x7bd72c20b67b7145a85eb2705913eeb980635a64';    // thor master-key -config-dir ~/Work/tmp/node3
 const endorsor = '0x5e4abda5cced44f70c9d2e1be4fda08c4291945b';
 const _authority: Authority[] = [
     { masterAddress: masterAddress1, endorsorAddress: endorsor, identity: strToHexStr('id1', 64) },
@@ -35,8 +35,8 @@ const _accounts: Account[] = [
         code: "0x6060604052600256",
         storage: { ['0x' + '0'.repeat(63) + '1']: '0x' + '0'.repeat(63) + '2' }
     },
-    { address: '0xfa580a85722b39c500a514c7292e9e5710a73974', balance: 100000000000000000000000000 },
-    { address: '0xe4e98a2c7831af1173f9f84c530fe844859d1836', balance: 100000000000000000000000000 }
+    { address: '0xfa580a85722b39c500a514c7292e9e5710a73974', balance: 100000000000000000000000000},
+    { address: '0xe4e98a2c7831af1173f9f84c530fe844859d1836', balance: 100000000000000000000000000}
 ];
 
 /**
@@ -54,7 +54,7 @@ const _executor: Executor = {
  * Construct the JSON object
  */
 const config: Config = {
-    launchTime: new Date().getTime(),
+    launchTime: Math.floor(new Date().getTime()/1000),  // Launch time in the unit of second
     gasLimit: 10000000,
     extraData: 'CustomChain',
     accounts: _accounts,

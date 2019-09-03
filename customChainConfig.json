@@ -1,5 +1,5 @@
 {
-    "launchTime": 1567428443608,
+    "launchTime": 1567476014,
     "gasLimit": 10000000,
     "extraData": "CustomChain",
     "accounts": [
@@ -23,17 +23,17 @@
     ],
     "authority": [
         {
-            "masterAddress": "0xa82181014927bf5ef68ba06bea980a32c2eb587a",
+            "masterAddress": "0x929710d206f0e1133f353553353de5bc80c8460b",
             "endorsorAddress": "0x5e4abda5cced44f70c9d2e1be4fda08c4291945b",
             "identity": "0x0000000000000000000000000000000000000000000000000000000000696431"
         },
         {
-            "masterAddress": "0x2685064b0c99b619c22079ef73083ba822f9a2c2",
+            "masterAddress": "0xaf05f933692569a710c2f6fa323a59e20068d418",
             "endorsorAddress": "0x5e4abda5cced44f70c9d2e1be4fda08c4291945b",
             "identity": "0x0000000000000000000000000000000000000000000000000000000000696432"
         },
         {
-            "masterAddress": "0x5f5ead1b7ed99eaab5eb82c417f15b710ff006bf",
+            "masterAddress": "0x7bd72c20b67b7145a85eb2705913eeb980635a64",
             "endorsorAddress": "0x5e4abda5cced44f70c9d2e1be4fda08c4291945b",
             "identity": "0x0000000000000000000000000000000000000000000000000000000000696433"
         }
